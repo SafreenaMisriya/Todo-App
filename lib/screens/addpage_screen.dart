@@ -98,13 +98,14 @@ class _AddPageState extends State<AddPage> {
     };
     final isSuccess=await Todoservice.addTodo(body);
     if(isSuccess){
+    
+     stdout.write('Creation  failed');
+      showsuccessMessage(context,message: 'Creation is failed');
+    }else{
+      stdout.write('Creation successful');
       titlecontroller.text='';
       decriptioncontroller.text='';
-     stdout.write('Creation is successful');
       showsuccessMessage(context,message: 'Creation is successful');
-    }else{
-      stdout.write('Creation failed');
-      showerrorMessage(context,message: 'Creation failed');
     }
   }
  
